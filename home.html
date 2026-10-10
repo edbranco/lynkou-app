@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Lynkou — Fornecedores de Compras Indiretas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fc7554",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e1e0ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#a6aaff",
+                        "primary-fixed": "#e1e0ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-fixed": "#ffdad2",
+                        "primary": "#1a1c85",
+                        "on-secondary-container": "#6a1300",
+                        "outline-variant": "#c7c5d4",
+                        "on-secondary-fixed-variant": "#872006",
+                        "on-secondary-fixed": "#3d0700",
+                        "on-surface-variant": "#464652",
+                        "inverse-surface": "#2e3132",
+                        "tertiary": "#26295a",
+                        "inverse-primary": "#bfc1ff",
+                        "outline": "#767684",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#3d3f71",
+                        "surface-tint": "#4e53b7",
+                        "on-tertiary-container": "#abace6",
+                        "on-tertiary-fixed": "#131546",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#404274",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed": "#03006d",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed-variant": "#363a9e",
+                        "primary-container": "#33379b",
+                        "secondary": "#EE6A4A",
+                        "secondary-fixed-dim": "#ffb4a2",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#c0c2fd",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "primary-fixed-dim": "#bfc1ff",
+                        "on-background": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-brand": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "h1-mobile": ["\"Baloo 2\""],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "h2": ["\"Baloo 2\""],
+                        "h3": ["\"Baloo 2\""],
+                        "h1": ["\"Baloo 2\""],
+                        "sans": ["Nunito Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Nunito Sans', sans-serif; background-color: var(--background); color: var(--on-background); }
+        h1, h2, h3, .font-heading { font-family: 'Baloo 2', sans-serif; }
+        .logo-text { font-family: 'Nunito Sans', sans-serif; font-weight: 900; letter-spacing: -0.05em; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<header class="bg-primary-container text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <nav class="flex items-center justify-between h-20">
+            <a class="flex items-center gap-2" href="index.html"><img src="https://lh3.googleusercontent.com/aida/AP1WRLvxTaMz6R1iQwW2JbrztCzgBqCFmiq8_QBB3b0q4iDvvYXX6BKAEaq335jL1Q4NV0n-AM3rNCjr0g6kn6GCebLwOO0XY6xa-9pR3YiFnPTcLxQUd6VHokZqhwkg_yX1zoKw3JYi2DydUrZJdSQ6k-FM1K-e7TWuLLE4za13fpZOM5hMaozWG8WqNy9XNl6AVjKjG1r2P5sa0R7GlMeu37BPk1Imz2OvNDKsoKY-3ryBEXhqMmiggWXFuRY" class="h-10 w-auto" alt="Logo Lynkou"></a>
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-primary-fixed-dim">
+                <a class="hover:text-white transition-colors" href="fornecedores.html">Fornecedores</a>
+                <a class="hover:text-white transition-colors" href="#como-funciona">Como funciona</a>
+                <a class="hover:text-white transition-colors" href="#planos">Para fornecedores</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a class="text-sm font-semibold text-white hover:text-primary-fixed-dim hidden md:block" href="cadastro-comprador.html">Entrar</a>
+                <a class="bg-secondary text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-opacity-90 transition-transform hover:-translate-y-0.5 shadow-lg shadow-secondary/30" href="cadastro-fornecedor.html">Cadastre sua empresa</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="bg-primary-container text-white py-24 relative overflow-hidden">
+    <div class="absolute -right-40 -top-40 w-[600px] h-[600px] rounded-full border-[80px] border-white/5 pointer-events-none"></div>
+    <div class="absolute -left-20 bottom-0 w-[400px] h-[400px] rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+    <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+        <h1 class="font-heading text-5xl md:text-6xl font-bold leading-tight max-w-3xl mb-6">Fornecedores de compras indiretas, <em class="not-italic text-secondary">verificados e prontos para atender.</em></h1>
+        <p class="text-xl text-primary-fixed-dim max-w-2xl mb-10">Encontre fornecedores de MRO, T.I., marketing e brindes em minutos e fale direto com eles — sem intermediários. Grátis para compradores.</p>
+        <div class="bg-white rounded-xl p-2 md:p-3 flex flex-col md:flex-row gap-2 max-w-4xl shadow-2xl">
+            <select aria-label="Categoria" class="bg-transparent border-0 md:border-r border-outline-variant text-on-surface text-base py-3 px-4 focus:ring-0 focus:outline-none w-full md:w-64 cursor-pointer font-medium">
+                <option>Todas as categorias</option>
+                <option>MRO — Manutenção e Suprimentos</option>
+                <option>T.I. — Equipamentos e Serviços</option>
+                <option>Marketing e Gráfica</option>
+                <option>Brindes Corporativos</option>
+                <option>Facilities e Limpeza</option>
+                <option>Embalagens</option>
+            </select>
+            <input aria-label="Buscar fornecedores" class="bg-transparent border-0 text-on-surface text-base py-3 px-4 focus:ring-0 w-full placeholder-on-surface-variant/70" placeholder="O que você precisa comprar? Ex: EPI, notebooks, brindes…" type="text">
+            <a class="bg-primary text-white font-bold px-8 py-3 rounded-lg text-center hover:bg-primary/90 transition-colors flex-shrink-0" href="fornecedores.html">Buscar</a>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-8 text-sm text-primary-fixed-dim">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-xl">verified</span> <strong class="text-white text-base">240+</strong> fornecedores verificados</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-xl">category</span> <strong class="text-white text-base">6</strong> categorias de indiretos</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-xl">money_off</span> <strong class="text-white text-base">100% grátis</strong> para compradores</div>
+        </div>
+    </div>
+</div>
+<section class="py-20 bg-surface" id="categorias">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+            <div>
+                <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-3 block">Navegue por categoria</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-on-surface">As categorias que todo comprador precisa</h2>
+            </div>
+            <a class="text-primary font-bold hover:text-primary-container flex items-center gap-1 transition-colors" href="fornecedores.html">Ver todos os fornecedores <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
+                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">build</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-3">MRO — Manutenção e Reparo</h3>
+                <p class="text-on-surface-variant text-sm mb-6">EPIs, ferramentas, peças de reposição, materiais elétricos e hidráulicos.</p>
+                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">64 fornecedores</span>
+            </a>
+            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
+                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">devices</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-3">Tecnologia da Informação</h3>
+                <p class="text-on-surface-variant text-sm mb-6">Notebooks, periféricos, licenças de software, outsourcing de impressão.</p>
+                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">48 fornecedores</span>
+            </a>
+            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
+                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">campaign</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-3">Marketing e Gráfica</h3>
+                <p class="text-on-surface-variant text-sm mb-6">Impressos, comunicação visual, sinalização, materiais de PDV.</p>
+                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">39 fornecedores</span>
+            </a>
+            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
+                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">redeem</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-3">Brindes Corporativos</h3>
+                <p class="text-on-surface-variant text-sm mb-6">Kits de boas-vindas, datas comemorativas, brindes personalizados.</p>
+                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">42 fornecedores</span>
+            </a>
+            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
+                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">cleaning_services</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-3">Facilities e Limpeza</h3>
+                <p class="text-on-surface-variant text-sm mb-6">Material de limpeza, copa, descartáveis, serviços de conservação.</p>
+                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">27 fornecedores</span>
+            </a>
+            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
+                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-3">Embalagens</h3>
+                <p class="text-on-surface-variant text-sm mb-6">Caixas, filmes, fitas, embalagens personalizadas e sustentáveis.</p>
+                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">20 fornecedores</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-surface-container-low" id="como-funciona">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-3 block">Como funciona</span>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-on-surface">Da necessidade ao contato certo em três passos</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="relative bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/50">
+                <div class="absolute -top-5 left-8 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">1</div>
+                <span class="text-xs font-bold tracking-wider text-primary uppercase mb-4 block mt-2">Comprador</span>
+                <h3 class="font-heading text-xl font-bold mb-3">Busque por categoria</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Filtre fornecedores por categoria, região e porte. Todos os perfis passam por verificação de CNPJ antes de entrar no ar.</p>
+            </div>
+            <div class="relative bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/50">
+                <div class="absolute -top-5 left-8 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">2</div>
+                <span class="text-xs font-bold tracking-wider text-primary uppercase mb-4 block mt-2">Comprador</span>
+                <h3 class="font-heading text-xl font-bold mb-3">Escolha e contate</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Veja o perfil completo do fornecedor e fale direto por WhatsApp, e-mail ou telefone — sem intermediários na plataforma.</p>
+            </div>
+            <div class="relative bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/50 border-b-4 border-b-secondary">
+                <div class="absolute -top-5 left-8 w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">3</div>
+                <span class="text-xs font-bold tracking-wider text-secondary uppercase mb-4 block mt-2">Comprador + Fornecedor</span>
+                <h3 class="font-heading text-xl font-bold mb-3">Negocie direto</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">A negociação é toda entre vocês, do seu jeito. Nós só garantimos que você encontrou a empresa certa e qualificada.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-primary-container text-white" id="planos">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-3 block">Para fornecedores</span>
+            <h2 class="font-heading text-3xl md:text-5xl font-bold mb-6">Comece grátis. Expanda quando quiser.</h2>
+            <p class="text-primary-fixed-dim text-lg">Sem comissões por venda. Pague apenas pela visibilidade e ferramentas que impulsionam seu negócio.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="bg-white/10 border border-white/20 rounded-2xl p-8 flex flex-col">
+                <h3 class="font-heading text-2xl font-bold mb-2">Iniciante</h3>
+                <div class="mb-6"><span class="text-4xl font-bold">Grátis</span></div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-primary-fixed-dim">
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Perfil básico da empresa</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Listagem em 1 categoria</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Recebimento de contatos direto</li>
+                </ul>
+                <a class="block w-full py-3 px-4 border-2 border-white/30 rounded-xl text-center font-bold hover:bg-white hover:text-primary-container transition-colors" href="cadastro-fornecedor.html">Criar perfil grátis</a>
+            </div>
+            <div class="bg-white text-on-surface rounded-2xl p-8 flex flex-col transform md:-translate-y-4 shadow-2xl relative border-2 border-secondary">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full">Mais popular</div>
+                <h3 class="font-heading text-2xl font-bold mb-2 text-primary-container">Profissional</h3>
+                <div class="mb-2"><span class="text-4xl font-bold">R$ 149</span><span class="text-on-surface-variant text-sm"> /mês</span></div>
+                <p class="text-sm text-on-surface-variant mb-6 border-b border-outline-variant pb-6">Ideal para expandir sua base de clientes B2B.</p>
+                <ul class="space-y-4 mb-8 flex-1 text-sm">
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> <span class="font-bold">Tudo do plano Grátis</span></li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Selo de empresa verificada</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Listagem em até 3 categorias</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Painel de estatísticas de visitas</li>
+                </ul>
+                <a class="block w-full py-3 px-4 bg-secondary text-white rounded-xl text-center font-bold hover:bg-secondary/90 transition-colors shadow-lg shadow-secondary/20" href="cadastro-fornecedor.html">Assinar Profissional</a>
+            </div>
+            <div class="bg-white/10 border border-white/20 rounded-2xl p-8 flex flex-col">
+                <h3 class="font-heading text-2xl font-bold mb-2">Destaque</h3>
+                <div class="mb-6"><span class="text-4xl font-bold">R$ 399</span><span class="text-primary-fixed-dim text-sm"> /mês</span></div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-primary-fixed-dim">
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> <span class="text-white font-bold">Tudo do plano Profissional</span></li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Topo absoluto nas buscas</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Vitrine na página inicial</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Selo de Destaque Ouro</li>
+                </ul>
+                <a class="block w-full py-3 px-4 bg-primary text-white rounded-xl text-center font-bold hover:bg-primary/80 transition-colors" href="cadastro-fornecedor.html">Quero me destacar</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-16 bg-surface border-b border-outline-variant/30">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <div class="bg-secondary text-white rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+            <div class="max-w-2xl">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">É comprador? Seu acesso é grátis — hoje e sempre.</h2>
+                <p class="text-lg opacity-90">Crie sua conta em 2 minutos e encontre seu próximo fornecedor qualificado ainda hoje.</p>
+            </div>
+            <a class="bg-white text-secondary font-bold text-lg py-4 px-8 rounded-xl hover:bg-surface-container-lowest transition-colors flex-shrink-0 shadow-lg" href="cadastro-comprador.html">Criar conta grátis</a>
+        </div>
+    </div>
+</section>
+<footer class="bg-primary text-primary-fixed-dim py-16 text-sm">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div class="lg:col-span-1">
+                <a class="flex items-center gap-2 mb-6" href="index.html">
+                    <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                    <span class="logo-text text-xl text-white lowercase tracking-tighter">lynkou</span>
+                </a>
+                <p class="mb-6 max-w-xs">A plataforma inteligente que conecta compradores corporativos a fornecedores qualificados em todo o Brasil.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Plataforma</h4>
+                <ul class="space-y-4">
+                    <li class=""><a class="hover:text-white transition-colors" href="fornecedores.html">Buscar fornecedores</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" href="#como-funciona">Como funciona</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" href="#planos">Planos para fornecedores</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" href="painel-fornecedor.html">Painel do fornecedor</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Institucional</h4>
+                <ul class="space-y-4">
+                    <li class=""><a class="hover:text-white transition-colors" href="#">Sobre a Lynkou</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" href="#">Contato</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" href="#">Blog Corporativo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Legal</h4>
+                <ul class="space-y-4">
+                    <li class=""><a class="hover:text-white transition-colors" href="#">Termos de uso</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" href="#">Política de privacidade</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" href="#">Adequação LGPD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <span class="">© 2026 Lynkou Ltda · CNPJ 00.000.000/0001-00</span>
+            <span class="flex items-center gap-2">Feito no Brasil 🇧🇷</span>
+        </div>
+    </div>
+</footer>
+
+
+</body></html>

@@ -1,0 +1,160 @@
+<header class="bg-primary text-on-primary border-b border-primary-container">
+    <nav class="max-w-container-max mx-auto px-gutter h-16 flex items-center justify-between">
+        <a class="font-h1 text-2xl font-bold tracking-tight" href="index.html"><img src="https://lh3.googleusercontent.com/aida/AP1WRLvxTaMz6R1iQwW2JbrztCzgBqCFmiq8_QBB3b0q4iDvvYXX6BKAEaq335jL1Q4NV0n-AM3rNCjr0g6kn6GCebLwOO0XY6xa-9pR3YiFnPTcLxQUd6VHokZqhwkg_yX1zoKw3JYi2DydUrZJdSQ6k-FM1K-e7TWuLLE4za13fpZOM5hMaozWG8WqNy9XNl6AVjKjG1r2P5sa0R7GlMeu37BPk1Imz2OvNDKsoKY-3ryBEXhqMmiggWXFuRY" class="h-10 w-auto" alt="Logo Lynkou"></a>
+        <a class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-label-bold border-2 border-primary-fixed text-primary-fixed hover:bg-primary-fixed hover:text-primary transition-colors" href="cadastro-comprador.html">Sou comprador</a>
+    </nav>
+</header>
+<div class="bg-primary text-on-primary pt-12 pb-24 text-center">
+    <div class="max-w-3xl mx-auto px-gutter">
+        <h1 class="font-h1 text-h1-mobile md:text-h1 mb-4 text-primary-fixed">Coloque sua empresa na frente de quem compra</h1>
+        <p class="font-body-lg text-inverse-primary max-w-2xl mx-auto mb-10"><strong class="text-secondary-fixed">Primeiro mês grátis</strong>, sem cartão de crédito. Cancele quando quiser.</p>
+        <div class="flex justify-center items-center gap-0 max-w-2xl mx-auto relative z-10 before:content-[''] before:absolute before:top-4 before:left-10 before:right-10 before:h-0.5 before:bg-primary-container before:-z-10">
+            <div class="flex-1 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-bold text-sm mb-2 shadow-lg ring-4 ring-primary">1</div>
+                <span class="text-xs font-label-bold text-primary-fixed">Dados da empresa</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary-container text-inverse-primary flex items-center justify-center font-label-bold text-sm mb-2 ring-4 ring-primary">2</div>
+                <span class="text-xs font-label-bold text-inverse-primary">Verificação do CNPJ</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary-container text-inverse-primary flex items-center justify-center font-label-bold text-sm mb-2 ring-4 ring-primary">3</div>
+                <span class="text-xs font-label-bold text-inverse-primary">Perfil no ar</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto px-gutter -mt-12 relative z-20 pb-20">
+    <div class="bg-surface-container-lowest rounded-xl shadow-xl border border-surface-container-high p-6 md:p-10">
+        <div class="mb-10">
+            <h2 class="font-h2 text-h3 md:text-h2 text-primary border-b border-surface-variant pb-4 mb-6">Dados da empresa</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="razao">Razão social</label>
+                    <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="razao" placeholder="Conforme o CNPJ" type="text">
+                </div>
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="fantasia">Nome fantasia</label>
+                    <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="fantasia" placeholder="Como o comprador vai te ver" type="text">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="fcnpj">CNPJ</label>
+                    <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="fcnpj" placeholder="00.000.000/0001-00" type="text">
+                    <div class="text-xs text-on-surface-variant mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified_user</span> Validamos automaticamente na Receita Federal.</div>
+                </div>
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="cidade">Cidade / UF</label>
+                    <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="cidade" placeholder="Ex: São Paulo, SP" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="mb-10">
+            <h2 class="font-h2 text-h3 md:text-h2 text-primary border-b border-surface-variant pb-4 mb-6">O que sua empresa fornece</h2>
+            <div class="mb-6">
+                <label class="block font-label-bold text-on-surface mb-3">Categorias de atuação (selecione até 2)</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+                        <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"> <span class="font-label-bold text-sm">MRO — Manutenção</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+                        <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"> <span class="font-label-bold text-sm">T.I.</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+                        <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"> <span class="font-label-bold text-sm">Marketing e Gráfica</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+                        <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"> <span class="font-label-bold text-sm">Brindes</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+                        <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"> <span class="font-label-bold text-sm">Facilities e Limpeza</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+                        <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"> <span class="font-label-bold text-sm">Embalagens</span>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-6">
+                <label class="block font-label-bold text-on-surface mb-2" for="desc">Descrição curta</label>
+                <textarea class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="desc" placeholder="Ex: Distribuidora de EPIs e ferramentas com entrega nacional e faturamento para PJ…" rows="3"></textarea>
+                <div class="text-xs text-on-surface-variant mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-sm">info</span> É o texto que aparece no seu perfil. Capriche: é seu cartão de visitas.</div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="atend">Área de atendimento</label>
+                    <select class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="atend">
+                        <option>Todo o Brasil</option>
+                        <option>Minha região / estado</option>
+                        <option>Minha cidade</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="fat">Faturamento a prazo?</label>
+                    <select class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="fat">
+                        <option>Sim, mediante análise</option>
+                        <option>Não, somente à vista</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mb-10">
+            <h2 class="font-h2 text-h3 md:text-h2 text-primary border-b border-surface-variant pb-4 mb-6">Contato comercial</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="resp">Responsável comercial</label>
+                    <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="resp" placeholder="Nome de quem atende" type="text">
+                </div>
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="wpp">WhatsApp comercial</label>
+                    <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="wpp" placeholder="(11) 99999-0000" type="tel">
+                    <div class="text-xs text-on-surface-variant mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-sm">chat</span> É por aqui que os compradores vão te chamar.</div>
+                </div>
+            </div>
+            <div>
+                <label class="block font-label-bold text-on-surface mb-2" for="femail">E-mail comercial</label>
+                <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow" id="femail" placeholder="vendas@suaempresa.com.br" type="email">
+            </div>
+        </div>
+        <div class="mb-10">
+            <h2 class="font-h2 text-h3 md:text-h2 text-primary border-b border-surface-variant pb-4 mb-6">Escolha seu plano</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <label class="relative flex flex-col p-6 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors bg-surface-container-lowest has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/30 has-[:checked]:ring-1 has-[:checked]:ring-primary">
+                    <input class="absolute top-6 right-6 w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="plano" type="radio">
+                    <h3 class="font-h3 text-xl text-on-surface mb-4">Básico</h3>
+                    <div class="mt-auto">
+                        <div class="font-h1 text-3xl text-primary font-bold mb-1">R$ 149</div>
+                        <div class="text-sm text-on-surface-variant font-label-bold">/mês após o 1º mês grátis</div>
+                    </div>
+                </label>
+                <label class="relative flex flex-col p-6 border-2 border-secondary rounded-xl cursor-pointer hover:border-secondary transition-colors bg-secondary-fixed/20 has-[:checked]:border-secondary has-[:checked]:bg-secondary-fixed/40 has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                    <span class="absolute -top-3 left-6 bg-secondary text-on-secondary text-xs font-label-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">Recomendado</span>
+                    <input checked="" class="absolute top-6 right-6 w-5 h-5 text-secondary border-outline-variant focus:ring-secondary" name="plano" type="radio">
+                    <h3 class="font-h3 text-xl text-on-surface mb-4 flex items-center gap-2">Destaque <span class="material-symbols-outlined text-secondary">star</span></h3>
+                    <div class="mt-auto">
+                        <div class="font-h1 text-3xl text-secondary font-bold mb-1">R$ 399</div>
+                        <div class="text-sm text-on-surface-variant font-label-bold">/mês · topo da categoria + vitrine</div>
+                    </div>
+                </label>
+            </div>
+            <div class="bg-primary-fixed/50 border border-primary-fixed text-on-primary-fixed-variant rounded-lg p-4 text-sm font-label-bold flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+                <p class="">Você não paga nada agora. A cobrança só começa após 30 dias — e avisamos por e-mail e WhatsApp antes.</p>
+            </div>
+        </div>
+        <div class="pt-6 border-t border-surface-variant">
+            <label class="flex items-start gap-3 cursor-pointer mb-8 group">
+                <input class="w-5 h-5 mt-0.5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox">
+                <span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+          Li e aceito os <a class="text-primary font-bold hover:underline" href="#">Termos de Uso</a>, a <a class="text-primary font-bold hover:underline" href="#">Política de Privacidade</a> e o tratamento de dados conforme a LGPD.
+        </span>
+            </label>
+            <button class="w-full bg-secondary hover:bg-secondary/90 text-on-secondary font-label-bold text-lg py-4 rounded-xl shadow-md transition-all active:scale-[0.98]">
+                Criar perfil grátis por 30 dias
+            </button>
+        </div>
+    </div>
+</div>
+<footer class="bg-on-surface text-surface-container py-8 text-center text-sm font-label-bold">
+    <p class="">© 2026 Lynkou · <a class="hover:text-white hover:underline transition-colors" href="index.html">Voltar à página inicial</a></p>
+</footer>

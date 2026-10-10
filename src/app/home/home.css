@@ -1,0 +1,4 @@
+/* A página inicial preserva seu tom de destaque original. */
+app-home {
+  --color-secondary: #ee6a4a;
+}

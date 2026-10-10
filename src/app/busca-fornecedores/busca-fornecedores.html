@@ -1,0 +1,163 @@
+<header class="bg-primary text-on-primary sticky top-0 z-50">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <nav class="flex items-center justify-between h-[72px]">
+            <a class="font-display-brand text-[24px] font-black tracking-tight" href="index.html"><img src="https://lh3.googleusercontent.com/aida/AP1WRLvxTaMz6R1iQwW2JbrztCzgBqCFmiq8_QBB3b0q4iDvvYXX6BKAEaq335jL1Q4NV0n-AM3rNCjr0g6kn6GCebLwOO0XY6xa-9pR3YiFnPTcLxQUd6VHokZqhwkg_yX1zoKw3JYi2DydUrZJdSQ6k-FM1K-e7TWuLLE4za13fpZOM5hMaozWG8WqNy9XNl6AVjKjG1r2P5sa0R7GlMeu37BPk1Imz2OvNDKsoKY-3ryBEXhqMmiggWXFuRY" class="h-10 w-auto" alt="Logo Lynkou"></a>
+            <div class="hidden md:flex gap-8 font-body-md font-medium">
+                <a class="opacity-85 hover:opacity-100 transition-opacity" href="fornecedores.html">Fornecedores</a>
+                <a class="opacity-85 hover:opacity-100 transition-opacity" href="index.html#como-funciona">Como funciona</a>
+                <a class="opacity-85 hover:opacity-100 transition-opacity" href="index.html#planos">Para fornecedores</a>
+            </div>
+            <div class="flex gap-3">
+                <a class="inline-block px-5 py-2.5 rounded-lg font-bold text-[14px] border-2 border-white/40 text-on-primary hover:bg-white/10 transition-colors" href="cadastro-comprador.html">Entrar</a>
+                <a class="inline-block px-5 py-2.5 rounded-lg font-bold text-[14px] border-2 border-secondary-container bg-secondary-container text-on-secondary-container hover:brightness-110 transition-all" href="cadastro-fornecedor.html">Cadastre sua empresa</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="bg-primary text-on-primary pb-10 pt-8">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <h1 class="font-h1-mobile md:font-h1 font-bold mb-5">Buscar fornecedores</h1>
+        <div class="bg-surface-container-lowest p-2 rounded-xl flex gap-2 max-w-3xl shadow-lg" role="search">
+            <input aria-label="Buscar" class="flex-1 bg-transparent border-none rounded-lg px-4 py-2 text-on-surface font-body-md focus:ring-2 focus:ring-primary w-full" placeholder="Buscar por nome, produto ou serviço… Ex: EPI, uniformes, notebooks" type="text">
+            <button class="bg-tertiary text-on-tertiary px-6 py-3 rounded-lg font-bold text-[14px] hover:brightness-110 transition-all shrink-0">Buscar</button>
+        </div>
+    </div>
+</div>
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 py-10">
+    <aside aria-label="Filtros" class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 h-fit md:sticky top-[104px] shadow-sm">
+        <h3 class="font-h3 text-on-surface mb-5">Filtrar resultados</h3>
+        <div class="mb-6">
+            <h4 class="font-label-bold text-on-surface-variant mb-3 uppercase tracking-wider text-[12px]">Categoria</h4>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input checked="" class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> MRO — Manutenção</label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> T.I.</label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> Marketing e Gráfica</label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> Brindes</label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> Facilities</label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> Embalagens</label>
+        </div>
+        <div class="mb-6">
+            <h4 class="font-label-bold text-on-surface-variant mb-3 uppercase tracking-wider text-[12px]">Estado</h4>
+            <select aria-label="Estado" class="w-full p-2.5 border border-outline-variant rounded-lg bg-surface font-body-md text-on-surface focus:ring-primary focus:border-primary">
+                <option>Todos os estados</option>
+                <option>São Paulo</option>
+                <option>Minas Gerais</option>
+                <option>Paraná</option>
+                <option>Rio de Janeiro</option>
+            </select>
+        </div>
+        <div class="mb-6">
+            <h4 class="font-label-bold text-on-surface-variant mb-3 uppercase tracking-wider text-[12px]">Atendimento</h4>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> Entrega nacional</label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> Faturamento a prazo</label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer font-body-md text-on-surface hover:text-primary transition-colors"><input class="w-4 h-4 text-primary bg-surface-container border-outline rounded focus:ring-primary" type="checkbox"> Pedido mínimo baixo</label>
+        </div>
+        <button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold text-[14px] hover:brightness-110 transition-all mt-2">Aplicar filtros</button>
+    </aside>
+    <main>
+        <div class="flex justify-between items-center mb-6 gap-4 flex-wrap">
+            <p class="font-body-md text-on-surface-variant"><strong class="text-on-surface font-bold">64 fornecedores</strong> encontrados em MRO — Manutenção</p>
+            <select aria-label="Ordenar por" class="p-2 px-3 border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md text-on-surface focus:ring-primary focus:border-primary">
+                <option>Ordenar: Relevância</option>
+                <option>Mais recentes</option>
+                <option>A–Z</option>
+            </select>
+        </div>
+        <div class="flex flex-col gap-4">
+            <div class="bg-surface-container-lowest border-2 border-secondary-container rounded-xl p-5 flex gap-5 items-center flex-wrap shadow-[0_4px_20px_rgba(252,117,84,0.15)] relative overflow-hidden">
+                <div class="w-14 h-14 rounded-xl bg-secondary-container/10 text-secondary-container flex items-center justify-center font-h3 font-bold shrink-0">SF</div>
+                <div class="flex-1 min-w-[220px]">
+                    <h3 class="font-body-lg font-bold text-on-surface flex items-center gap-2 flex-wrap">
+                        SupriFix Distribuidora
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">★ Destaque</span>
+                    </h3>
+                    <div class="font-body-md text-on-surface-variant mt-1">EPIs, ferramentas e materiais elétricos · São Paulo, SP · Atende todo o Brasil</div>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Entrega nacional</span>
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Faturamento 28 dias</span>
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Catálogo 4.000+ itens</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 min-w-[170px]">
+                    <a class="bg-primary text-on-primary py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:brightness-110 transition-all" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                </div>
+            </div>
+            <div class="bg-surface-container-lowest border-2 border-secondary-container rounded-xl p-5 flex gap-5 items-center flex-wrap shadow-[0_4px_20px_rgba(252,117,84,0.15)] relative overflow-hidden">
+                <div class="w-14 h-14 rounded-xl bg-secondary-container/10 text-secondary-container flex items-center justify-center font-h3 font-bold shrink-0">MP</div>
+                <div class="flex-1 min-w-[220px]">
+                    <h3 class="font-body-lg font-bold text-on-surface flex items-center gap-2 flex-wrap">
+                        MaxParts Industrial
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">★ Destaque</span>
+                    </h3>
+                    <div class="font-body-md text-on-surface-variant mt-1">Peças de reposição e rolamentos · Joinville, SC · Atende Sul e Sudeste</div>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Pronta entrega</span>
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Cotação em 2h</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 min-w-[170px]">
+                    <a class="bg-primary text-on-primary py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:brightness-110 transition-all" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                </div>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex gap-5 items-center flex-wrap hover:shadow-md transition-shadow">
+                <div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-h3 font-bold shrink-0">EL</div>
+                <div class="flex-1 min-w-[220px]">
+                    <h3 class="font-body-lg font-bold text-on-surface flex items-center gap-2 flex-wrap">
+                        Elétrica Lopes Suprimentos
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">✓ Verificado</span>
+                    </h3>
+                    <div class="font-body-md text-on-surface-variant mt-1">Materiais elétricos e iluminação · Campinas, SP</div>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Faturamento a prazo</span>
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Entrega regional</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 min-w-[170px]">
+                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                </div>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex gap-5 items-center flex-wrap hover:shadow-md transition-shadow">
+                <div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-h3 font-bold shrink-0">PS</div>
+                <div class="flex-1 min-w-[220px]">
+                    <h3 class="font-body-lg font-bold text-on-surface flex items-center gap-2 flex-wrap">
+                        ProSeg Equipamentos
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">✓ Verificado</span>
+                    </h3>
+                    <div class="font-body-md text-on-surface-variant mt-1">EPIs e segurança do trabalho · Contagem, MG</div>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">CA em dia</span>
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Pedido mínimo baixo</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 min-w-[170px]">
+                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                </div>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex gap-5 items-center flex-wrap hover:shadow-md transition-shadow">
+                <div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-h3 font-bold shrink-0">HT</div>
+                <div class="flex-1 min-w-[220px]">
+                    <h3 class="font-body-lg font-bold text-on-surface flex items-center gap-2 flex-wrap">
+                        HidroTubos Comercial
+                        <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">✓ Verificado</span>
+                    </h3>
+                    <div class="font-body-md text-on-surface-variant mt-1">Materiais hidráulicos e conexões · Curitiba, PR</div>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">Entrega em 48h</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 min-w-[170px]">
+                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                </div>
+            </div>
+        </div>
+        <div aria-label="Paginação" class="flex justify-center gap-2 mt-10">
+            <a class="w-10 h-10 flex items-center justify-center border border-primary rounded-lg bg-primary font-body-md font-bold text-on-primary" href="#">1</a>
+            <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md font-bold text-on-surface hover:bg-surface-container transition-colors" href="#">2</a>
+            <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md font-bold text-on-surface hover:bg-surface-container transition-colors" href="#">3</a>
+            <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md font-bold text-on-surface hover:bg-surface-container transition-colors" href="#">…</a>
+            <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md font-bold text-on-surface hover:bg-surface-container transition-colors" href="#">13</a>
+        </div>
+    </main>
+</div>
+<footer class="bg-tertiary text-on-tertiary-container py-10 font-body-md text-center">
+    <p class="">© 2026 ConectaSupri · <a class="underline hover:text-on-tertiary transition-colors" href="index.html">Voltar à página inicial</a></p>
+</footer>

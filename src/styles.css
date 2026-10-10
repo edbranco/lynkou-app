@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@fontsource/baloo-2/latin-400.css';
+@import '@fontsource/baloo-2/latin-600.css';
+@import '@fontsource/baloo-2/latin-700.css';
+@import '@fontsource/baloo-2/latin-800.css';
+@import '@fontsource/nunito-sans/latin-400.css';
+@import '@fontsource/nunito-sans/latin-500.css';
+@import '@fontsource/nunito-sans/latin-600.css';
+@import '@fontsource/nunito-sans/latin-700.css';
+@import '@fontsource/nunito-sans/latin-800.css';
+@import '@fontsource/nunito-sans/latin-900.css';
+@import 'material-symbols/outlined.css';
+@import 'tailwindcss';
+
+@theme {
+  --color-on-error: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #a6aaff;
+  --color-on-primary-fixed: #03006d;
+  --color-on-primary-fixed-variant: #363a9e;
+  --color-on-secondary-container: #6a1300;
+  --color-on-secondary-fixed: #3d0700;
+  --color-on-secondary-fixed-variant: #872006;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #abace6;
+  --color-on-tertiary-fixed: #131546;
+  --color-on-tertiary-fixed-variant: #404274;
+  --color-on-background: #191c1d;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-inverse-surface: #2e3132;
+  --color-inverse-on-surface: #f0f1f2;
+  --color-inverse-primary: #bfc1ff;
+  --color-secondary-container: #fc7554;
+  --color-secondary-fixed: #ffdad2;
+  --color-secondary-fixed-dim: #ffb4a2;
+  --color-primary: #1a1c85;
+  --color-primary-container: #33379b;
+  --color-primary-fixed: #e1e0ff;
+  --color-primary-fixed-dim: #bfc1ff;
+  --color-secondary: #a8381c;
+  --color-tertiary: #26295a;
+  --color-tertiary-container: #3d3f71;
+  --color-tertiary-fixed: #e1e0ff;
+  --color-tertiary-fixed-dim: #c0c2fd;
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #464652;
+  --color-surface-bright: #f8f9fa;
+  --color-surface-dim: #d9dadb;
+  --color-surface: #f8f9fa;
+  --color-background: #f8f9fa;
+  --color-surface-variant: #e1e3e4;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container: #edeeef;
+  --color-surface-container-high: #e7e8e9;
+  --color-surface-container-highest: #e1e3e4;
+  --color-outline: #767684;
+  --color-outline-variant: #c7c5d4;
+  --color-wa: #25d366;
+
+  --font-display-brand: 'Nunito Sans', sans-serif;
+  --font-label-bold: 'Nunito Sans', sans-serif;
+  --font-body-md: 'Nunito Sans', sans-serif;
+  --font-body-lg: 'Nunito Sans', sans-serif;
+  --font-h1-mobile: 'Baloo 2', sans-serif;
+  --font-h1: 'Baloo 2', sans-serif;
+  --font-h2: 'Baloo 2', sans-serif;
+  --font-h3: 'Baloo 2', sans-serif;
+  --text-display-brand: 48px;
+  --text-display-brand--line-height: 1.2;
+  --text-label-bold: 14px;
+  --text-label-bold--line-height: 20px;
+  --text-h1-mobile: 32px;
+  --text-h1-mobile--line-height: 40px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-h2: 32px;
+  --text-h2--line-height: 40px;
+  --text-h3: 24px;
+  --text-h3--line-height: 32px;
+  --text-h1: 40px;
+  --text-h1--line-height: 48px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito Sans', sans-serif; background: #f8f9fa; color: #191c1d; }
+h1, h2, h3, .font-heading { font-family: 'Baloo 2', sans-serif; }
+.logo-text { font-family: 'Nunito Sans', sans-serif; font-weight: 900; letter-spacing: -0.05em; }
+
+/* Fonte variável usada pelos ícones Material Symbols da Home. */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

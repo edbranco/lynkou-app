@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Painel do Fornecedor — Lynkou</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&amp;family=Nunito+Sans:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fc7554",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e1e0ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#a6aaff",
+                        "primary-fixed": "#e1e0ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-fixed": "#ffdad2",
+                        "primary": "#1a1c85",
+                        "on-secondary-container": "#6a1300",
+                        "outline-variant": "#c7c5d4",
+                        "on-secondary-fixed-variant": "#872006",
+                        "on-secondary-fixed": "#3d0700",
+                        "on-surface-variant": "#464652",
+                        "inverse-surface": "#2e3132",
+                        "tertiary": "#26295a",
+                        "inverse-primary": "#bfc1ff",
+                        "outline": "#767684",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#3d3f71",
+                        "surface-tint": "#4e53b7",
+                        "on-tertiary-container": "#abace6",
+                        "on-tertiary-fixed": "#131546",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#404274",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed": "#03006d",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed-variant": "#363a9e",
+                        "primary-container": "#33379b",
+                        "secondary": "#a8381c",
+                        "secondary-fixed-dim": "#ffb4a2",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#c0c2fd",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "primary-fixed-dim": "#bfc1ff",
+                        "on-background": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-brand": [
+                            "Nunito Sans"
+                        ],
+                        "label-bold": [
+                            "Nunito Sans"
+                        ],
+                        "h1-mobile": [
+                            "\"Baloo 2\""
+                        ],
+                        "body-md": [
+                            "Nunito Sans"
+                        ],
+                        "body-lg": [
+                            "Nunito Sans"
+                        ],
+                        "h2": [
+                            "\"Baloo 2\""
+                        ],
+                        "h3": [
+                            "\"Baloo 2\""
+                        ],
+                        "h1": [
+                            "\"Baloo 2\""
+                        ]
+                    },
+                    "fontSize": {
+                        "display-brand": [
+                            "48px",
+                            {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "900"
+                            }
+                        ],
+                        "label-bold": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "h1-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "h2": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "h3": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "h1": [
+                            "40px",
+                            {
+                                "lineHeight": "48px",
+                                "fontWeight": "700"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<header class="bg-primary text-on-primary sticky top-0 z-50 shadow-md">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <nav class="flex items-center justify-between h-[68px]">
+            <a class="font-display-brand text-[21px] flex items-center gap-2" href="index.html"><img src="https://lh3.googleusercontent.com/aida/AP1WRLtWr-af8dt_sQtvMBGFdI7CuB_vo1Bf1Pd_1NoLr5z-VMU5NdypJTHMWFhEGGhqK8b1X_ijPB4afqNukZ_k4AvySBAqs7Kc-8iTMDTbN6ikQBN825Wn06xzdnutM4wNkUOFwXzLyoSXkeQZz3bACxBDvKjHeaj15ckB5GmyvMRXC26OZARMLvnQF4jcu-gE1cJJvajE4_72w_kDWw79NsWQJA1pftXR_SAGAhQduU4IgZyPErhdo7A9CQ" alt="Logo Lynkou" class="h-9 w-auto"></a>
+            <div class="flex items-center gap-6 text-label-bold">
+                <a class="hover:text-secondary-container transition-colors hidden md:block" href="#">Painel</a>
+                <a class="hover:text-secondary-container transition-colors hidden md:block" href="#">Contatos</a>
+                <a class="hover:text-secondary-container transition-colors hidden md:block" href="#">Meu Perfil</a>
+                <div class="flex items-center gap-3 ml-4 pl-4 border-l border-primary-container">
+                    <span class="hidden sm:block">SupriFix Distribuidora</span>
+                    <div class="w-9 h-9 rounded-full bg-secondary-container text-on-primary flex items-center justify-center font-label-bold">SF</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<main class="flex-grow">
+    <div class="max-w-container-max mx-auto px-gutter py-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+            <div>
+                <h1 class="font-h1 text-h1 text-primary mb-1">Olá, SupriFix 👋</h1>
+                <p class="text-on-surface-variant font-body-md flex items-center gap-2 flex-wrap">
+                    Plano atual:
+                    <span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">star</span> Destaque
+          </span>
+                    <span class="hidden sm:inline">·</span>
+                    próxima cobrança em 15/08/2026
+                    <span class="hidden sm:inline">·</span>
+                    <a class="text-primary hover:underline font-label-bold" href="#">gerenciar assinatura</a>
+                </p>
+            </div>
+            <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-label-bold hover:bg-primary-container transition-colors shadow-sm" href="perfil-fornecedor.html">
+                <span class="material-symbols-outlined text-[20px]">visibility</span>
+                Ver meu perfil público
+            </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-primary text-on-primary rounded-xl p-6 shadow-sm flex flex-col justify-between">
+                <div class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim mb-2">Contatos recebidos (Julho)</div>
+                <div class="font-display-brand text-5xl mb-2">18</div>
+                <div class="text-sm font-label-bold text-secondary-container flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">trending_up</span> 38% vs. junho
+                </div>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col justify-between">
+                <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Visitas ao perfil</div>
+                <div class="font-display-brand text-4xl text-primary mb-2">312</div>
+                <div class="text-sm font-label-bold text-secondary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">trending_up</span> 21% vs. junho
+                </div>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col justify-between">
+                <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Posição MRO</div>
+                <div class="font-display-brand text-4xl text-primary mb-2">1º</div>
+                <div class="text-sm font-label-bold text-on-surface-variant">Garantida pelo plano Destaque</div>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col justify-between">
+                <div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Taxa de resposta</div>
+                <div class="font-display-brand text-4xl text-primary mb-2">94%</div>
+                <div class="text-sm font-label-bold text-on-surface-variant">Excelente — manter &gt; 80%</div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 pb-12">
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+                    <div class="p-6 border-b border-outline-variant flex justify-between items-center">
+                        <h2 class="font-h2 text-h3 text-primary m-0">Contatos recentes</h2>
+                        <button class="text-primary hover:bg-primary-fixed px-3 py-1.5 rounded-lg text-sm font-label-bold transition-colors">Ver todos</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm whitespace-nowrap">
+                            <thead class="bg-surface-container-low text-on-surface-variant">
+                            <tr>
+                                <th class="px-6 py-4 font-bold uppercase tracking-wider text-xs">Comprador</th>
+                                <th class="px-6 py-4 font-bold uppercase tracking-wider text-xs">Empresa</th>
+                                <th class="px-6 py-4 font-bold uppercase tracking-wider text-xs">Interesse</th>
+                                <th class="px-6 py-4 font-bold uppercase tracking-wider text-xs">Canal</th>
+                                <th class="px-6 py-4 font-bold uppercase tracking-wider text-xs">Data</th>
+                            </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant">
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-6 py-4 font-medium flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                                    Fernanda L.
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Metalúrgica Andrade</td>
+                                <td class="px-6 py-4">EPIs — luvas e óculos</td>
+                                <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#E5F8EC] text-[#1B7A43]">
+<span class="material-symbols-outlined text-[14px]">chat</span> WhatsApp
+                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Hoje, 10:42</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-6 py-4 font-medium flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                                    Ricardo M.
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">CondLog Armazéns</td>
+                                <td class="px-6 py-4">Ferramentas elétricas</td>
+                                <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#FFF3D6] text-[#8A6400]">
+<span class="material-symbols-outlined text-[14px]">call</span> Telefone
+                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Hoje, 09:15</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-6 py-4 font-medium pl-10">Paula T.</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Grupo Vitalle</td>
+                                <td class="px-6 py-4">Materiais elétricos</td>
+                                <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#E5F8EC] text-[#1B7A43]">
+<span class="material-symbols-outlined text-[14px]">chat</span> WhatsApp
+                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Ontem</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-6 py-4 font-medium pl-10">André C.</td>
+                                <td class="px-6 py-4 text-on-surface-variant">FabriTec Indústria</td>
+                                <td class="px-6 py-4">Catálogo completo</td>
+                                <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#E8EDF7] text-[#33518F]">
+<span class="material-symbols-outlined text-[14px]">mail</span> E-mail
+                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">08/07</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low transition-colors">
+                                <td class="px-6 py-4 font-medium pl-10">Juliana R.</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Souza &amp; Filhos</td>
+                                <td class="px-6 py-4">Abrasivos e fixadores</td>
+                                <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#E5F8EC] text-[#1B7A43]">
+<span class="material-symbols-outlined text-[14px]">chat</span> WhatsApp
+                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">07/07</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <aside class="space-y-6">
+                <div class="bg-primary text-on-primary rounded-xl p-6 shadow-sm">
+                    <h2 class="font-h3 text-h3 text-secondary-container mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined">star</span> Destaque Ativo
+                    </h2>
+                    <p class="text-sm text-primary-fixed-dim mb-6 leading-relaxed">Perfis em destaque recebem em média <strong class="text-white font-bold">3x mais contatos</strong> que perfis do plano Básico. Você está no topo da categoria MRO.</p>
+                    <a class="block w-full text-center px-4 py-2.5 bg-secondary-container text-white rounded-lg font-label-bold hover:bg-secondary transition-colors" href="#">Ver relatório completo</a>
+                </div>
+                <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+                    <h2 class="font-h3 text-h3 text-primary mb-4">Força do perfil</h2>
+                    <div class="w-full bg-surface-container-high rounded-full h-2.5 mb-3">
+                        <div class="bg-secondary-container h-2.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-sm text-on-surface-variant"><strong>85% completo.</strong> Adicione fotos dos produtos para chegar a 100% — perfis com fotos recebem mais cliques.</p>
+                </div>
+                <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+                    <h2 class="font-h3 text-h3 text-primary mb-4">Dicas de conversão</h2>
+                    <ul class="text-sm text-on-surface-variant space-y-3">
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+                            Responda em até 2 horas — o comprador costuma chamar mais de um fornecedor.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+                            Mantenha o WhatsApp comercial sempre ativo no horário útil.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+                            Atualize suas condições comerciais a cada trimestre.
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>
+
+
+</body></html>
