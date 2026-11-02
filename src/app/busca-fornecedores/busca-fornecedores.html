@@ -1,15 +1,15 @@
 <header class="bg-primary text-on-primary sticky top-0 z-50">
     <div class="max-w-[1280px] mx-auto px-6">
         <nav class="flex items-center justify-between h-[72px]">
-            <a class="font-display-brand text-[24px] font-black tracking-tight" href="index.html"><img src="https://lh3.googleusercontent.com/aida/AP1WRLvxTaMz6R1iQwW2JbrztCzgBqCFmiq8_QBB3b0q4iDvvYXX6BKAEaq335jL1Q4NV0n-AM3rNCjr0g6kn6GCebLwOO0XY6xa-9pR3YiFnPTcLxQUd6VHokZqhwkg_yX1zoKw3JYi2DydUrZJdSQ6k-FM1K-e7TWuLLE4za13fpZOM5hMaozWG8WqNy9XNl6AVjKjG1r2P5sa0R7GlMeu37BPk1Imz2OvNDKsoKY-3ryBEXhqMmiggWXFuRY" class="h-10 w-auto" alt="Logo Lynkou"></a>
+            <a class="font-display-brand text-[24px] font-black tracking-tight" routerLink="/"><img src="https://lh3.googleusercontent.com/aida/AP1WRLvxTaMz6R1iQwW2JbrztCzgBqCFmiq8_QBB3b0q4iDvvYXX6BKAEaq335jL1Q4NV0n-AM3rNCjr0g6kn6GCebLwOO0XY6xa-9pR3YiFnPTcLxQUd6VHokZqhwkg_yX1zoKw3JYi2DydUrZJdSQ6k-FM1K-e7TWuLLE4za13fpZOM5hMaozWG8WqNy9XNl6AVjKjG1r2P5sa0R7GlMeu37BPk1Imz2OvNDKsoKY-3ryBEXhqMmiggWXFuRY" class="h-10 w-auto" alt="Logo Lynkou"></a>
             <div class="hidden md:flex gap-8 font-body-md font-medium">
-                <a class="opacity-85 hover:opacity-100 transition-opacity" href="fornecedores.html">Fornecedores</a>
-                <a class="opacity-85 hover:opacity-100 transition-opacity" href="index.html#como-funciona">Como funciona</a>
-                <a class="opacity-85 hover:opacity-100 transition-opacity" href="index.html#planos">Para fornecedores</a>
+                <a class="opacity-85 hover:opacity-100 transition-opacity" routerLink="/busca-fornecedores">Fornecedores</a>
+                <a class="opacity-85 hover:opacity-100 transition-opacity" routerLink="/" fragment="como-funciona">Como funciona</a>
+                <a class="opacity-85 hover:opacity-100 transition-opacity" routerLink="/" fragment="planos">Para fornecedores</a>
             </div>
             <div class="flex gap-3">
-                <a class="inline-block px-5 py-2.5 rounded-lg font-bold text-[14px] border-2 border-white/40 text-on-primary hover:bg-white/10 transition-colors" href="cadastro-comprador.html">Entrar</a>
-                <a class="inline-block px-5 py-2.5 rounded-lg font-bold text-[14px] border-2 border-secondary-container bg-secondary-container text-on-secondary-container hover:brightness-110 transition-all" href="cadastro-fornecedor.html">Cadastre sua empresa</a>
+                <a class="inline-block px-5 py-2.5 rounded-lg font-bold text-[14px] border-2 border-white/40 text-on-primary hover:bg-white/10 transition-colors" routerLink="/cadastro-comprador">Entrar</a>
+                <a class="inline-block px-5 py-2.5 rounded-lg font-bold text-[14px] border-2 border-secondary-container bg-secondary-container text-on-secondary-container hover:brightness-110 transition-all" routerLink="/cadastro-fornecedor">Cadastre sua empresa</a>
             </div>
         </nav>
     </div>
@@ -17,10 +17,10 @@
 <div class="bg-primary text-on-primary pb-10 pt-8">
     <div class="max-w-[1280px] mx-auto px-6">
         <h1 class="font-h1-mobile md:font-h1 font-bold mb-5">Buscar fornecedores</h1>
-        <div class="bg-surface-container-lowest p-2 rounded-xl flex gap-2 max-w-3xl shadow-lg" role="search">
-            <input aria-label="Buscar" class="flex-1 bg-transparent border-none rounded-lg px-4 py-2 text-on-surface font-body-md focus:ring-2 focus:ring-primary w-full" placeholder="Buscar por nome, produto ou serviço… Ex: EPI, uniformes, notebooks" type="text">
-            <button class="bg-tertiary text-on-tertiary px-6 py-3 rounded-lg font-bold text-[14px] hover:brightness-110 transition-all shrink-0">Buscar</button>
-        </div>
+        <form class="bg-surface-container-lowest p-2 rounded-xl flex gap-2 max-w-3xl shadow-lg" (ngSubmit)="searchSuppliers()" role="search">
+            <input aria-label="Buscar" class="flex-1 bg-transparent border-none rounded-lg px-4 py-2 text-on-surface font-body-md focus:ring-2 focus:ring-primary w-full" placeholder="Buscar por nome, produto ou serviço… Ex: EPI, uniformes, notebooks" type="text" name="nome" [(ngModel)]="supplierName">
+            <button class="bg-tertiary text-on-tertiary px-6 py-3 rounded-lg font-bold text-[14px] hover:brightness-110 transition-all shrink-0" type="submit">Buscar</button>
+        </form>
     </div>
 </div>
 <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 py-10">
@@ -55,13 +55,45 @@
     </aside>
     <main>
         <div class="flex justify-between items-center mb-6 gap-4 flex-wrap">
-            <p class="font-body-md text-on-surface-variant"><strong class="text-on-surface font-bold">64 fornecedores</strong> encontrados em MRO — Manutenção</p>
+            <p class="font-body-md text-on-surface-variant">
+                <strong class="text-on-surface font-bold">{{ suppliers().length }}</strong> fornecedor(es) encontrado(s)
+                @if (category()) {
+                    — {{ category() }}
+                }
+            </p>
             <select aria-label="Ordenar por" class="p-2 px-3 border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md text-on-surface focus:ring-primary focus:border-primary">
                 <option>Ordenar: Relevância</option>
                 <option>Mais recentes</option>
                 <option>A–Z</option>
             </select>
         </div>
+        <div class="flex flex-col gap-4">
+            @if (isLoading()) {
+                <p class="text-on-surface-variant" role="status">Carregando fornecedores...</p>
+            } @else if (hasError()) {
+                <p class="text-on-surface-variant" role="alert">Não foi possível carregar os fornecedores. Tente novamente mais tarde.</p>
+            } @else {
+                @for (supplier of suppliers(); track supplier.id) {
+                    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex gap-5 items-center flex-wrap hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-h3 font-bold shrink-0">{{ supplier.razaoSocial.slice(0, 2).toUpperCase() }}</div>
+                        <div class="flex-1 min-w-[220px]">
+                            <h3 class="font-body-lg font-bold text-on-surface">{{ supplier.razaoSocial }}</h3>
+                            @if (supplier.categorias.length > 0) {
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    @for (supplierCategory of supplier.categorias; track supplierCategory) {
+                                        <span class="text-xs bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant font-medium">{{ supplierCategory }}</span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <a class="bg-primary text-on-primary py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:brightness-110 transition-all" routerLink="/perfil-fornecedor">Ver perfil e contato</a>
+                    </div>
+                } @empty {
+                    <p class="text-on-surface-variant">Nenhum fornecedor encontrado para esta categoria.</p>
+                }
+            }
+        </div>
+        <div class="hidden">
         <div class="flex flex-col gap-4">
             <div class="bg-surface-container-lowest border-2 border-secondary-container rounded-xl p-5 flex gap-5 items-center flex-wrap shadow-[0_4px_20px_rgba(252,117,84,0.15)] relative overflow-hidden">
                 <div class="w-14 h-14 rounded-xl bg-secondary-container/10 text-secondary-container flex items-center justify-center font-h3 font-bold shrink-0">SF</div>
@@ -78,7 +110,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 min-w-[170px]">
-                    <a class="bg-primary text-on-primary py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:brightness-110 transition-all" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                    <a class="bg-primary text-on-primary py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:brightness-110 transition-all" routerLink="/perfil-fornecedor">Ver perfil e contato</a>
                 </div>
             </div>
             <div class="bg-surface-container-lowest border-2 border-secondary-container rounded-xl p-5 flex gap-5 items-center flex-wrap shadow-[0_4px_20px_rgba(252,117,84,0.15)] relative overflow-hidden">
@@ -95,7 +127,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 min-w-[170px]">
-                    <a class="bg-primary text-on-primary py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:brightness-110 transition-all" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                    <a class="bg-primary text-on-primary py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:brightness-110 transition-all" routerLink="/perfil-fornecedor">Ver perfil e contato</a>
                 </div>
             </div>
             <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex gap-5 items-center flex-wrap hover:shadow-md transition-shadow">
@@ -112,7 +144,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 min-w-[170px]">
-                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" routerLink="/perfil-fornecedor">Ver perfil e contato</a>
                 </div>
             </div>
             <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex gap-5 items-center flex-wrap hover:shadow-md transition-shadow">
@@ -129,7 +161,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 min-w-[170px]">
-                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" routerLink="/perfil-fornecedor">Ver perfil e contato</a>
                 </div>
             </div>
             <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex gap-5 items-center flex-wrap hover:shadow-md transition-shadow">
@@ -145,7 +177,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 min-w-[170px]">
-                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" href="perfil-fornecedor.html">Ver perfil e contato</a>
+                    <a class="bg-surface-container-highest text-on-surface py-2.5 px-4 rounded-lg font-bold text-[14px] text-center hover:bg-surface-dim transition-colors" routerLink="/perfil-fornecedor">Ver perfil e contato</a>
                 </div>
             </div>
         </div>
@@ -156,8 +188,9 @@
             <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md font-bold text-on-surface hover:bg-surface-container transition-colors" href="#">…</a>
             <a class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md font-bold text-on-surface hover:bg-surface-container transition-colors" href="#">13</a>
         </div>
+        </div>
     </main>
 </div>
 <footer class="bg-tertiary text-on-tertiary-container py-10 font-body-md text-center">
-    <p class="">© 2026 ConectaSupri · <a class="underline hover:text-on-tertiary transition-colors" href="index.html">Voltar à página inicial</a></p>
+    <p class="">© 2026 ConectaSupri · <a class="underline hover:text-on-tertiary transition-colors" routerLink="/">Voltar à página inicial</a></p>
 </footer>

@@ -1,15 +1,15 @@
 <header class="bg-primary-container text-white sticky top-0 z-50 shadow-md">
     <div class="max-w-[1280px] mx-auto px-6">
         <nav class="flex items-center justify-between h-20">
-            <a class="flex items-center gap-2" href="index.html"><img src="https://lh3.googleusercontent.com/aida/AP1WRLvxTaMz6R1iQwW2JbrztCzgBqCFmiq8_QBB3b0q4iDvvYXX6BKAEaq335jL1Q4NV0n-AM3rNCjr0g6kn6GCebLwOO0XY6xa-9pR3YiFnPTcLxQUd6VHokZqhwkg_yX1zoKw3JYi2DydUrZJdSQ6k-FM1K-e7TWuLLE4za13fpZOM5hMaozWG8WqNy9XNl6AVjKjG1r2P5sa0R7GlMeu37BPk1Imz2OvNDKsoKY-3ryBEXhqMmiggWXFuRY" class="h-10 w-auto" alt="Logo Lynkou"></a>
+            <a class="flex items-center gap-2" routerLink="/"><img src="https://lh3.googleusercontent.com/aida/AP1WRLvxTaMz6R1iQwW2JbrztCzgBqCFmiq8_QBB3b0q4iDvvYXX6BKAEaq335jL1Q4NV0n-AM3rNCjr0g6kn6GCebLwOO0XY6xa-9pR3YiFnPTcLxQUd6VHokZqhwkg_yX1zoKw3JYi2DydUrZJdSQ6k-FM1K-e7TWuLLE4za13fpZOM5hMaozWG8WqNy9XNl6AVjKjG1r2P5sa0R7GlMeu37BPk1Imz2OvNDKsoKY-3ryBEXhqMmiggWXFuRY" class="h-10 w-auto" alt="Logo Lynkou"></a>
             <div class="hidden md:flex gap-8 text-sm font-semibold text-primary-fixed-dim">
-                <a class="hover:text-white transition-colors" href="fornecedores.html">Fornecedores</a>
+                <a class="hover:text-white transition-colors" routerLink="/busca-fornecedores">Fornecedores</a>
                 <a class="hover:text-white transition-colors" href="#como-funciona">Como funciona</a>
                 <a class="hover:text-white transition-colors" href="#planos">Para fornecedores</a>
             </div>
             <div class="flex items-center gap-4">
-                <a class="text-sm font-semibold text-white hover:text-primary-fixed-dim hidden md:block" href="cadastro-comprador.html">Entrar</a>
-                <a class="bg-secondary text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-opacity-90 transition-transform hover:-translate-y-0.5 shadow-lg shadow-secondary/30" href="cadastro-fornecedor.html">Cadastre sua empresa</a>
+                <a class="text-sm font-semibold text-white hover:text-primary-fixed-dim hidden md:block" routerLink="/cadastro-comprador">Entrar</a>
+                <a class="bg-secondary text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-opacity-90 transition-transform hover:-translate-y-0.5 shadow-lg shadow-secondary/30" routerLink="/cadastro-fornecedor">Cadastre sua empresa</a>
             </div>
         </nav>
     </div>
@@ -20,19 +20,16 @@
     <div class="max-w-[1280px] mx-auto px-6 relative z-10">
         <h1 class="font-heading text-5xl md:text-6xl font-bold leading-tight max-w-3xl mb-6">Fornecedores de compras indiretas, <em class="not-italic text-secondary">verificados e prontos para atender.</em></h1>
         <p class="text-xl text-primary-fixed-dim max-w-2xl mb-10">Encontre fornecedores de MRO, T.I., marketing e brindes em minutos e fale direto com eles — sem intermediários. Grátis para compradores.</p>
-        <div class="bg-white rounded-xl p-2 md:p-3 flex flex-col md:flex-row gap-2 max-w-4xl shadow-2xl">
-            <select aria-label="Categoria" class="bg-transparent border-0 md:border-r border-outline-variant text-on-surface text-base py-3 px-4 focus:ring-0 focus:outline-none w-full md:w-64 cursor-pointer font-medium">
-                <option>Todas as categorias</option>
-                <option>MRO — Manutenção e Suprimentos</option>
-                <option>T.I. — Equipamentos e Serviços</option>
-                <option>Marketing e Gráfica</option>
-                <option>Brindes Corporativos</option>
-                <option>Facilities e Limpeza</option>
-                <option>Embalagens</option>
+        <form class="bg-white rounded-xl p-2 md:p-3 flex flex-col md:flex-row gap-2 max-w-4xl shadow-2xl" (ngSubmit)="searchSuppliers()" role="search">
+            <select aria-label="Categoria" class="bg-transparent border-0 md:border-r border-outline-variant text-on-surface text-base py-3 px-4 focus:ring-0 focus:outline-none w-full md:w-64 cursor-pointer font-medium" name="category" [(ngModel)]="selectedCategory">
+                <option value="">Todas as categorias</option>
+                @for (category of categories(); track category.id) {
+                    <option [value]="category.nome">{{ category.nome }}</option>
+                }
             </select>
-            <input aria-label="Buscar fornecedores" class="bg-transparent border-0 text-on-surface text-base py-3 px-4 focus:ring-0 w-full placeholder-on-surface-variant/70" placeholder="O que você precisa comprar? Ex: EPI, notebooks, brindes…" type="text">
-            <a class="bg-primary text-white font-bold px-8 py-3 rounded-lg text-center hover:bg-primary/90 transition-colors flex-shrink-0" href="fornecedores.html">Buscar</a>
-        </div>
+            <input aria-label="Buscar fornecedores" class="bg-transparent border-0 text-on-surface text-base py-3 px-4 focus:ring-0 w-full placeholder-on-surface-variant/70" placeholder="O que você precisa comprar? Ex: EPI, notebooks, brindes…" type="text" name="nome" [(ngModel)]="supplierName">
+            <button class="bg-primary text-white font-bold px-8 py-3 rounded-lg text-center hover:bg-primary/90 transition-colors flex-shrink-0" type="submit">Buscar</button>
+        </form>
         <div class="mt-10 flex flex-wrap gap-8 text-sm text-primary-fixed-dim">
             <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-xl">verified</span> <strong class="text-white text-base">240+</strong> fornecedores verificados</div>
             <div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-xl">category</span> <strong class="text-white text-base">6</strong> categorias de indiretos</div>
@@ -47,57 +44,26 @@
                 <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-3 block">Navegue por categoria</span>
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-on-surface">As categorias que todo comprador precisa</h2>
             </div>
-            <a class="text-primary font-bold hover:text-primary-container flex items-center gap-1 transition-colors" href="fornecedores.html">Ver todos os fornecedores <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            <a class="text-primary font-bold hover:text-primary-container flex items-center gap-1 transition-colors" routerLink="/busca-fornecedores">Ver todos os fornecedores <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span class="material-symbols-outlined">build</span>
-                </div>
-                <h3 class="font-heading text-xl font-bold mb-3">MRO — Manutenção e Reparo</h3>
-                <p class="text-on-surface-variant text-sm mb-6">EPIs, ferramentas, peças de reposição, materiais elétricos e hidráulicos.</p>
-                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">64 fornecedores</span>
-            </a>
-            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span class="material-symbols-outlined">devices</span>
-                </div>
-                <h3 class="font-heading text-xl font-bold mb-3">Tecnologia da Informação</h3>
-                <p class="text-on-surface-variant text-sm mb-6">Notebooks, periféricos, licenças de software, outsourcing de impressão.</p>
-                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">48 fornecedores</span>
-            </a>
-            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span class="material-symbols-outlined">campaign</span>
-                </div>
-                <h3 class="font-heading text-xl font-bold mb-3">Marketing e Gráfica</h3>
-                <p class="text-on-surface-variant text-sm mb-6">Impressos, comunicação visual, sinalização, materiais de PDV.</p>
-                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">39 fornecedores</span>
-            </a>
-            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span class="material-symbols-outlined">redeem</span>
-                </div>
-                <h3 class="font-heading text-xl font-bold mb-3">Brindes Corporativos</h3>
-                <p class="text-on-surface-variant text-sm mb-6">Kits de boas-vindas, datas comemorativas, brindes personalizados.</p>
-                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">42 fornecedores</span>
-            </a>
-            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span class="material-symbols-outlined">cleaning_services</span>
-                </div>
-                <h3 class="font-heading text-xl font-bold mb-3">Facilities e Limpeza</h3>
-                <p class="text-on-surface-variant text-sm mb-6">Material de limpeza, copa, descartáveis, serviços de conservação.</p>
-                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">27 fornecedores</span>
-            </a>
-            <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" href="fornecedores.html">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span class="material-symbols-outlined">inventory_2</span>
-                </div>
-                <h3 class="font-heading text-xl font-bold mb-3">Embalagens</h3>
-                <p class="text-on-surface-variant text-sm mb-6">Caixas, filmes, fitas, embalagens personalizadas e sustentáveis.</p>
-                <span class="text-secondary font-bold text-sm bg-secondary/10 px-3 py-1 rounded-full">20 fornecedores</span>
-            </a>
+            @if (isLoadingCategories()) {
+                <p class="col-span-full text-on-surface-variant" role="status">Carregando categorias...</p>
+            } @else if (hasCategoriesError()) {
+                <p class="col-span-full text-on-surface-variant" role="alert">Não foi possível carregar as categorias. Tente novamente mais tarde.</p>
+            } @else {
+                @for (category of categories(); track category.id) {
+                    <a class="group bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 hover:border-secondary hover:shadow-lg transition-all duration-300" routerLink="/busca-fornecedores">
+                        <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">{{ category.iconKey }}</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold mb-3">{{ category.nome }}</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">{{ categoryDescription(category) }}</p>
+                    </a>
+                } @empty {
+                    <p class="col-span-full text-on-surface-variant">Nenhuma categoria disponível no momento.</p>
+                }
+            }
         </div>
     </div>
 </section>
@@ -145,7 +111,7 @@
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Listagem em 1 categoria</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Recebimento de contatos direto</li>
                 </ul>
-                <a class="block w-full py-3 px-4 border-2 border-white/30 rounded-xl text-center font-bold hover:bg-white hover:text-primary-container transition-colors" href="cadastro-fornecedor.html">Criar perfil grátis</a>
+                <a class="block w-full py-3 px-4 border-2 border-white/30 rounded-xl text-center font-bold hover:bg-white hover:text-primary-container transition-colors" routerLink="/cadastro-fornecedor">Criar perfil grátis</a>
             </div>
             <div class="bg-white text-on-surface rounded-2xl p-8 flex flex-col transform md:-translate-y-4 shadow-2xl relative border-2 border-secondary">
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full">Mais popular</div>
@@ -158,7 +124,7 @@
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Listagem em até 3 categorias</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Painel de estatísticas de visitas</li>
                 </ul>
-                <a class="block w-full py-3 px-4 bg-secondary text-white rounded-xl text-center font-bold hover:bg-secondary/90 transition-colors shadow-lg shadow-secondary/20" href="cadastro-fornecedor.html">Assinar Profissional</a>
+                <a class="block w-full py-3 px-4 bg-secondary text-white rounded-xl text-center font-bold hover:bg-secondary/90 transition-colors shadow-lg shadow-secondary/20" routerLink="/cadastro-fornecedor">Assinar Profissional</a>
             </div>
             <div class="bg-white/10 border border-white/20 rounded-2xl p-8 flex flex-col">
                 <h3 class="font-heading text-2xl font-bold mb-2">Destaque</h3>
@@ -169,7 +135,7 @@
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Vitrine na página inicial</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">check_circle</span> Selo de Destaque Ouro</li>
                 </ul>
-                <a class="block w-full py-3 px-4 bg-primary text-white rounded-xl text-center font-bold hover:bg-primary/80 transition-colors" href="cadastro-fornecedor.html">Quero me destacar</a>
+                <a class="block w-full py-3 px-4 bg-primary text-white rounded-xl text-center font-bold hover:bg-primary/80 transition-colors" routerLink="/cadastro-fornecedor">Quero me destacar</a>
             </div>
         </div>
     </div>
@@ -181,7 +147,7 @@
                 <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">É comprador? Seu acesso é grátis — hoje e sempre.</h2>
                 <p class="text-lg opacity-90">Crie sua conta em 2 minutos e encontre seu próximo fornecedor qualificado ainda hoje.</p>
             </div>
-            <a class="bg-white text-secondary font-bold text-lg py-4 px-8 rounded-xl hover:bg-surface-container-lowest transition-colors flex-shrink-0 shadow-lg" href="cadastro-comprador.html">Criar conta grátis</a>
+            <a class="bg-white text-secondary font-bold text-lg py-4 px-8 rounded-xl hover:bg-surface-container-lowest transition-colors flex-shrink-0 shadow-lg" routerLink="/cadastro-comprador">Criar conta grátis</a>
         </div>
     </div>
 </section>
@@ -189,7 +155,7 @@
     <div class="max-w-[1280px] mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div class="lg:col-span-1">
-                <a class="flex items-center gap-2 mb-6" href="index.html">
+                <a class="flex items-center gap-2 mb-6" routerLink="/">
                     <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
                         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -201,10 +167,10 @@
             <div>
                 <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Plataforma</h4>
                 <ul class="space-y-4">
-                    <li class=""><a class="hover:text-white transition-colors" href="fornecedores.html">Buscar fornecedores</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" routerLink="/busca-fornecedores">Buscar fornecedores</a></li>
                     <li class=""><a class="hover:text-white transition-colors" href="#como-funciona">Como funciona</a></li>
                     <li class=""><a class="hover:text-white transition-colors" href="#planos">Planos para fornecedores</a></li>
-                    <li class=""><a class="hover:text-white transition-colors" href="painel-fornecedor.html">Painel do fornecedor</a></li>
+                    <li class=""><a class="hover:text-white transition-colors" routerLink="/painel-fornecedor">Painel do fornecedor</a></li>
                 </ul>
             </div>
             <div>
